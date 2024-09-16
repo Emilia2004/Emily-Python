@@ -223,9 +223,7 @@ class JointAccount(Account):
     
 
 
-user = CheckingAccount(123456,2500.0,"sdfgh",230.02)
-id = int(input("Enter Id"))
-user.setAccountNumber(id)
+
 
 
 
