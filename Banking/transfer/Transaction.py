@@ -2,11 +2,11 @@ from account import account
 import datetime
 class Transaction():
     def __init__(self,from_account: account.Account,to_account: account.Account,amount: float,transaction_type: str,timestamp: datetime):
-        self.__from_account = from_account
-        self.__to_account = to_account
-        self.__amount = amount
-        self.__transaction_type = transaction_type
-        self.__timestamp = timestamp
+        self.__from_account = self.setFromAccount(from_account)
+        self.__to_account = self.setToAccount(to_account)
+        self.__amount = self.setAmount(amount)
+        self.__transaction_type = self.setTransactionType(transaction_type)
+        self.__timestamp = self.setTimestamp(timestamp)
 
 
     def setFromAccount(self,aaccount):
