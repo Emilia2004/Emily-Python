@@ -2,9 +2,9 @@ from abc import ABC,abstractmethod
 class Account(ABC):
     
     def __init__(self,account_number:int, balance:float, account_type:str ):
-        self.__account_number = account_number
-        self.__account_type = account_type
-        self.__balance = balance
+        self.__account_number = self.setAccountNumber(account_number)
+        self.__account_type = self.setAccountType(account_type)
+        self.__balance = self.setBalance(balance)
     
     
     def setBalance(self,balance):
@@ -69,7 +69,7 @@ class CheckingAccount(Account):
     
     def __init__(self, account_number: int, balance: float, account_type:str, overdraft_limit: float): 
         super().__init__(account_number, balance, account_type)
-        self.__overdraft_limit = overdraft_limit
+        self.__overdraft_limit = self.setOverdraftLimit(overdraft_limit)
     
     
     def setOverdraftLimit(self,limit):
@@ -119,7 +119,7 @@ class CheckingAccount(Account):
 class SavingsAccount(Account):
     def __init__(self, account_number: int, balance: float, account_type:str, interest_rate: float): 
         super().__init__(account_number, balance, account_type)
-        self.__interest__rate = interest_rate
+        self.__interest__rate = self.setInterestRate(interest_rate)
     
 
     def setInterestRate(self,rate):
@@ -169,7 +169,7 @@ class SavingsAccount(Account):
 class JointAccount(Account):
     def __init__(self, account_number: int, balance: float, account_type:str,interest_rate:float, joint_owners: list[str]): 
         super().__init__(account_number, balance, account_type,interest_rate)
-        self.__joint_owners = joint_owners
+        self.__joint_owners = self.setJointOwners(joint_owners)
 
     
     def setJointOwners(self,owners):
