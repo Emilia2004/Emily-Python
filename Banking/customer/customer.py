@@ -1,12 +1,12 @@
 from account import account
 class Customer:
     def __init__(self,name: str,contact_info: str, accounts: list[account.Account]):
-        self.__name = name
-        self.__contact_info = contact_info
-        self.__accounts = accounts
+        self.__name = self.setName(name)
+        self.__contact_info = self.setContactInfo(contact_info)
+        self.__accounts = self.setAccount(accounts)
         self.__transaction_history = []
 
-
+    
     def setName(self,name):
         if isinstance(name,str):
             self.__name = name
