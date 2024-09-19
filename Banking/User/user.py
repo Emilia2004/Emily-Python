@@ -186,41 +186,41 @@ class TextMessage(Message):
     
 
 
-    class MultimediaMessage(Message):
-        def __init__(self,sender: 'User',conversation: 'Conversation', timestamp: datetime,file_path: str,media_type: str):
-            super().__init__(sender,conversation, timestamp)
-            self.setFilePath(file_path)
-            self.setMediaType(media_type)
+class MultimediaMessage(Message):
+    def __init__(self,sender: 'User',conversation: 'Conversation', timestamp: datetime,file_path: str,media_type: str):
+        super().__init__(sender,conversation, timestamp)
+        self.setFilePath(file_path)
+        self.setMediaType(media_type)
 
 
-        def setFilePath(self,path):
-            if isinstance(path,str) and path != "":
-                self.__file_path = path
-            else:
-                print("Invalid path")
+    def setFilePath(self,path):
+        if isinstance(path,str) and path != "":
+            self.__file_path = path
+        else:
+            print("Invalid path")
             
 
-        def getFilePath(self):
-            return self.__file_path
+    def getFilePath(self):
+        return self.__file_path
         
 
-        def setMediaType(self,type):
-            if isinstance(type,str):
-                self.__media_type = type
-            else:
-                print("Invalid type")
+    def setMediaType(self,type):
+        if isinstance(type,str):
+            self.__media_type = type
+        else:
+            print("Invalid type")
 
             
-        def getMediaType(self):
-            return self.__media_type
+    def getMediaType(self):
+        return self.__media_type
         
 
-        def display_content(self) -> None:
-            print(self.__conversation)
+    def display_content(self) -> None:
+        print(self.__conversation)
 
 
-        def get_message_type(self) -> str:
-            return self.__media_type
+    def get_message_type(self) -> str:
+        return self.__media_type
         
 
 
@@ -238,7 +238,7 @@ class MessagingManager(ABC):
         ...
 
 
-        
+
 
     
 
