@@ -105,13 +105,13 @@ class Conversation:
 
 
 
-from abc import abstractmethod
+from abc import ABC,abstractmethod
 
-class Message:
+class Message(ABC):
     def __init__(self,sender: 'User',conversation: 'Conversation', timestamp: datetime ):
         self.setSender(sender)
         self.setConversation(conversation)
-        self.settimestamp(timestamp)
+        self.setTimestamp(timestamp)
 
 
     def setSender(self,sender):
@@ -154,3 +154,93 @@ class Message:
     @abstractmethod
     def get_message_type(self) -> str:
         ...
+
+
+
+
+class TextMessage(Message):
+    def __init__(self,sender: 'User',conversation: 'Conversation', timestamp: datetime,content:str):
+        super().__init__(sender,conversation, timestamp)
+        self.setContent(content)
+
+
+    def setContent(self,content):
+        if isinstance(content,str) and content != "":
+            self.__content = content
+        else:
+            print("Invalid content")
+        
+
+    def getContent(self):
+        return self.__content
+    
+
+    def display_content(self) -> None:
+        return self.__conversation
+
+
+    def get_message_type(self) -> str:
+        if self.__content.isdigit():
+            return int
+        return str
+    
+
+
+    class MultimediaMessage(Message):
+        def __init__(self,sender: 'User',conversation: 'Conversation', timestamp: datetime,file_path: str,media_type: str):
+            super().__init__(sender,conversation, timestamp)
+            self.setFilePath(file_path)
+            self.setMediaType(media_type)
+
+
+        def setFilePath(self,path):
+            if isinstance(path,str) and path != "":
+                self.__file_path = path
+            else:
+                print("Invalid path")
+            
+
+        def getFilePath(self):
+            return self.__file_path
+        
+
+        def setMediaType(self,type):
+            if isinstance(type,str):
+                self.__media_type = type
+            else:
+                print("Invalid type")
+
+            
+        def getMediaType(self):
+            return self.__media_type
+        
+
+        def display_content(self) -> None:
+            print(self.__conversation)
+
+
+        def get_message_type(self) -> str:
+            return self.__media_type
+        
+
+
+class MessagingManager(ABC):
+    @abstractmethod
+    def send_message(self, message: 'Message') -> None:
+        ...
+
+    @abstractmethod
+    def receive_message(self, message: 'Message') -> None:
+        ...
+
+    @abstractmethod
+    def view_conversation_history(self, conversation: 'Conversation') -> list['Message']:
+        ...
+
+
+        
+
+    
+
+
+     
