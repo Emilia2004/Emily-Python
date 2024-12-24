@@ -1,0 +1,5 @@
+fs = open("specific_position.txt", mode = "w")
+fs.write("Hellooo")
+fs = open("specific_position.txt", mode = "r+")
+fs.seek(10)
+fs.write("HI there!")
