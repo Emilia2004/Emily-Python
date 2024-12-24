@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedFarm Hospital</title>
+  <style>
+    /* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f9;
+    }
+
+    header {
+      background: #007bff;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      background: #0056b3;
+      border-radius: 5px;
+    }
+
+    nav a.active {
+      background: #003f7f;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    section {
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    .hero {
+      text-align: center;
+    }
+
+    .hero img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    .news-item {
+      display: flex;
+      gap: 1rem;
+      background: white;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .news-item img {
+      max-width: 200px;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .story-item {
+      display: flex;
+      gap: 1rem;
+      background: white;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .story-item img {
+      max-width: 150px;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #007bff;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    /* Form Styling */
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center align form elements */
+      gap: 1rem;
+    }
+
+    .contact label, .contact input, .contact textarea, .contact button {
+      width: 100%;
+      max-width: 400px; /* Set a maximum width for form elements */
+      text-align: center; /* Center the text inside the form elements */
+    }
+
+    .contact input, .contact textarea {
+      padding: 0.7rem;
+    }
+
+    .contact button {
+      padding: 0.7rem;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      max-width: 400px; /* Make the submit button the same width as inputs */
+    }
+
+    .contact button:hover {
+      background: #0056b3;
+    }
+
+    /* Contact Info Styling */
+    .contact-info {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+
+      .news-item, .story-item {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .news-item img, .story-item img {
+        width: 100%;
+        max-width: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MedFarm Hospital</h1>
+    <nav>
+      <a href="#home" class="active" onclick="showSection('home')">Home</a>
+      <a href="#stories" onclick="showSection('stories')">Patient Stories</a>
+      <a href="#contact" onclick="showSection('contact')">Contact</a>
+      <a href="#about" onclick="showSection('about')">About Us</a>
+    </nav>
+  </header>
+
+  <main id="content">
+
+    <!-- Home Section -->
+    <section id="home" class="hero active">
+      <h2>Welcome to MedFarm Hospital</h2>
+      <p>We provide expert medical care, advanced treatments, and compassionate care to all of our patients.</p>
+
+      <img src="https://i.pinimg.com/736x/1e/34/db/1e34db9e0a2fec5a3464882cc8d35e76.jpg" alt="Hospital Image">
+      
+      <!-- Hospital News Section -->
+      <h3>Hospital News</h3>
+      <div class="news-item">
+        <img src="https://i.pinimg.com/736x/3b/58/26/3b58264367ff25a10d419888fde59af7.jpg" alt="New Emergency Protocols">
+        <div>
+          <h4>MedFarm Implements New Emergency Protocols</h4>
+          <p>We are proud to announce new emergency response procedures aimed at providing faster, more efficient care for critical patients. These protocols are designed to save lives and improve outcomes during emergencies.</p>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <img src="https://i.pinimg.com/736x/66/8d/cb/668dcb6206d4d4128af4c90511e23a04.jpg" alt="Pediatric Wing">
+        <div>
+          <h4>MedFarm's New Pediatric Wing Now Open</h4>
+          <p>Our new pediatric wing offers state-of-the-art facilities for children in need of medical care. The wing includes comfortable rooms, a play area, and advanced medical equipment for young patients.</p>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <img src="https://i.pinimg.com/736x/f0/39/36/f0393685fa08c7753e4760b8f2f810bb.jpg" alt="COVID Vaccination">
+        <div>
+          <h4>COVID-19 Vaccination Clinics Available at MedFarm</h4>
+          <p>We are offering free COVID-19 vaccinations for patients and the general public. Visit MedFarm's vaccination clinic for your dose and stay protected.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Patient Stories Section -->
+    <section id="stories" class="patient-stories">
+      <h2>Patient Stories</h2>
+      <div class="story-item">
+        <img src="https://i.pinimg.com/736x/91/88/53/918853a6b3712be0c8eb90243e20fc85.jpg" alt="Heart Surgery">
+        <div>
+          <h3>John's Journey: Overcoming Heart Surgery</h3>
+          <p>John shares his incredible experience of undergoing heart surgery at MedFarm. His story highlights the excellent care and support he received from our skilled doctors and nurses throughout the process.</p>
+        </div>
+      </div>
+      <div class="story-item">
+        <img src="https://i.pinimg.com/736x/1c/de/fa/1cdefaf4c71e68ea9cd1af09207929bd.jpg" alt="Cancer Survivor">
+        <div>
+          <h3>Mary's Recovery: A Cancer Survivor's Tale</h3>
+          <p>Mary describes her courageous battle with cancer and the compassionate care she received at MedFarm. Her story is a testament to the resilience of patients and the dedication of our medical team.</p>
+        </div>
+      </div>
+      <div class="story-item">
+        <img src="https://i.pinimg.com/736x/25/44/fe/2544feff19c1466311a4cc5453a44103.jpg" alt="Accident Recovery">
+        <div>
+          <h3>David's Path to Healing After an Accident</h3>
+          <p>David recounts his experience after a life-threatening car accident and his recovery journey at MedFarm. He credits our orthopedic surgeons and physical therapy team for his successful recovery.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        
+        <button type="submit">Submit</button>
+      </form>
+
+      <!-- Contact Info Section -->
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <p>Phone: +1 (123) 456-7890</p>
+        <p>Email: contact@medfarmhospital.com</p>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h2>About MedFarm Hospital</h2>
+      <p>MedFarm Hospital has been a cornerstone of healthcare in the region for over 25 years. Founded with the mission to provide exceptional medical care, we have grown into a trusted healthcare institution, known for our cutting-edge medical treatments, compassionate care, and commitment to improving the health and well-being of our community. Our hospital serves as a beacon of hope for patients, offering them access to advanced medical technologies, highly skilled professionals, and a nurturing environment for healing.</p>
+
+      <h3>Our Vision</h3>
+      <p>At MedFarm Hospital, we envision a future where everyone has access to high-quality healthcare services. We strive to be a leader in medical innovation, patient care, and education, while maintaining a strong commitment to our patients' emotional and physical well-being. Our vision is to continuously improve and evolve with the latest medical advancements, ensuring that we offer the best treatments and services available.</p>
+
+      <h3>Our Mission</h3>
+      <p>Our mission is to provide comprehensive, compassionate, and innovative healthcare services to our community. We aim to deliver personalized care tailored to each patient’s unique needs. Through collaboration and a patient-first approach, we are dedicated to enhancing the health and quality of life for all individuals. We are committed to providing the highest standard of care through advanced medical technologies, a patient-centered approach, and a collaborative environment where healthcare professionals work together to deliver the best outcomes. We believe in holistic care, addressing both the medical and emotional needs of our patients, and fostering long-lasting relationships built on trust and respect.</p>
+
+      <h3>State-of-the-Art Facilities</h3>
+      <p>MedFarm Hospital is equipped with state-of-the-art medical facilities and cutting-edge technology that allow us to provide the most effective and efficient care. Our hospital includes specialized departments for cardiology, oncology, orthopedics, pediatrics, emergency care, and much more. With modern diagnostic equipment, advanced treatment methods, and a skilled team of specialists, we ensure that our patients receive the highest level of care available in the region.</p>
+
+      <h3>Patient-Centered Care</h3>
+      <p>At the heart of everything we do is our commitment to patient-centered care. We recognize that each patient is unique and that healthcare should be tailored to meet their individual needs. Our compassionate staff listens to and understands the concerns of every patient, creating a personalized care plan that fosters healing and recovery. We work closely with patients and their families to ensure the highest quality of life during their treatment and recovery.</p>
+
+      <h3>Our Medical Team</h3>
+      <p>MedFarm Hospital is proud to have a dedicated team of highly trained and experienced healthcare professionals. Our doctors, nurses, surgeons, and support staff are experts in their fields, providing compassionate and knowledgeable care to all patients. We foster a culture of collaboration and continuous learning to ensure our team stays up-to-date with the latest advancements in medicine. Each member of our medical team is committed to providing personalized care, making every patient’s health and well-being our top priority.</p>
+
+      <h3>Advanced Medical Research and Education</h3>
+      <p>MedFarm Hospital is also deeply committed to advancing medical research and education. We partner with renowned medical institutions and universities to conduct groundbreaking research aimed at improving treatments, therapies, and medical technologies. We are proud to offer training programs for future healthcare professionals, allowing them to learn from experienced mentors and gain hands-on experience in our state-of-the-art facilities. Our commitment to education and research helps ensure that MedFarm Hospital remains at the forefront of medical care and innovation.</p>
+
+      <h3>Community Outreach</h3>
+      <p>We believe in giving back to the community that has supported us for so many years. MedFarm Hospital actively participates in various community outreach programs aimed at improving public health and providing medical services to underserved populations. We offer free health screenings, educational seminars, and collaborate with local organizations to promote wellness and healthy living. Our goal is to make healthcare accessible to everyone, regardless of their background or economic situation.</p>
+
+      <h3>Contact Information</h3>
+      <p>Phone: +1 (123) 456-7890</p>
+      <p>Email: contact@medfarmhospital.com</p>
+      <p>Address: 123 Health Street, MedCity, Country</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 MedFarm Hospital. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach((section) => {
+        section.classList.remove('active');
+      });
+
+      const links = document.querySelectorAll('nav a');
+      links.forEach((link) => {
+        link.classList.remove('active');
+      });
+
+      document.getElementById(sectionId).classList.add('active');
+      document.querySelector(`a[href="#${sectionId}"]`).classList.add('active');
+    }
+  </script>
+</body>
+</html>

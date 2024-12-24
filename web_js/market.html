@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Market</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; }
+        .header, .footer { background: #B22222; color: #fff; padding: 1rem; }
+        .logo { font-size: 2.5rem; font-weight: bold; color: #FFD700; text-shadow: 2px 2px 4px #8B0000; }
+        nav ul { list-style: none; padding: 0; display: flex; gap: 15px; }
+        nav a { text-decoration: none; color: #fff; cursor: pointer; }
+        .section { display: none; padding: 2rem; }
+        .section.active { display: block; }
+        .hero { text-align: center; background: url('assets/market.jpg') no-repeat center/cover; color: #fff; padding: 4rem 1rem; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; color: #FFD700; text-shadow: 2px 2px 4px #8B0000; }
+        .hero p { font-size: 1.5rem; color: #FFFACD; text-shadow: 1px 1px 2px #8B0000; }
+        .btn { background: #228B22; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; text-decoration: none; }
+        .btn:hover { background: #196619; }
+        .info, .comments { padding: 2rem; background: #f8f8f8; border-radius: 10px; margin: 1rem 0; }
+        .info h2, .comments h2 { margin-top: 0; }
+        .comment { display: flex; align-items: center; border-bottom: 1px solid #ddd; padding: 10px 0; }
+        .comment:last-child { border-bottom: none; }
+        .review-photo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .stall-list { display: flex; gap: 20px; flex-wrap: wrap; }
+        .stall { flex: 1 1 calc(33.333% - 20px); text-align: center; border: 1px solid #ddd; border-radius: 10px; overflow: hidden; }
+        .stall img { width: 100%; height: 200px; object-fit: cover; }
+        .stall h2 { margin: 0.5rem 0; }
+        input, textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            background: #f8f8f8;
+            border-radius: 10px;
+            margin: 1rem 0;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        button {
+            background: #228B22;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            width: 200px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background: #196619;
+        }
+        .contact-info {
+            text-align: center;
+            padding: 2rem;
+            background: #f8f8f8;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+        .contact-info h2 {
+            margin-top: 0;
+        }
+        .market-photo { width: 50%; height: auto; border-radius: 10px; margin: 2rem auto; display: block; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">JOY</div>
+        <nav>
+            <ul>
+                <li><a onclick="showSection('home')">Home</a></li>
+                <li><a onclick="showSection('stalls')">Market Stalls</a></li>
+                <li><a onclick="showSection('contact')">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="section active">
+            <div class="hero">
+                <h1>Welcome to the Christmas Market!</h1>
+                <p>Discover festive stalls, delicious treats, and unique gifts for the season.</p>
+                <div class="photo-container">
+                    <img src="https://i.pinimg.com/736x/82/50/e5/8250e5f340d08f9b56025434e2c61a44.jpg" alt="Christmas Market Photo" class="market-photo">
+                </div>
+                <a onclick="showSection('stalls')" class="btn">Explore Stalls</a>
+            </div>
+            <div class="info">
+                <h2>About the Christmas Market</h2>
+                <p>
+                    Step into a world of holiday wonder at the Christmas Market, where the magic of the season comes alive in every corner. Nestled in the heart of the city, this festive gathering is a celebration of tradition, community, and the spirit of giving. Wander through rows of enchanting stalls, each brimming with handcrafted treasures, mouthwatering treats, and one-of-a-kind gifts that are perfect for everyone on your holiday list.
+                </p>
+                <p>
+                    As you stroll through the market, the air is filled with the sweet scent of freshly baked gingerbread, the rich aroma of mulled wine, and the sound of cheerful carolers spreading festive cheer. Each stall tells a story, offering unique decorations, artisanal crafts, and holiday ornaments that capture the warmth and beauty of this special time of year.
+                </p>
+                <p>
+                    Whether you're searching for the perfect gift, enjoying a warm cup of cocoa by the fire, or simply soaking in the festive atmosphere, the Christmas Market promises an unforgettable experience. Gather with friends and family to make memories that will last a lifetime in this magical winter wonderland. Join us this holiday season, and let the spirit of Christmas fill your heart.
+                </p>
+            </div>
+
+            <div class="comments">
+                <h2>Customer's review</h2>
+                <div class="comment">
+                    <img src="https://i.pinimg.com/236x/d6/54/cc/d654cc149317aba1ab193a7a15a0588f.jpg" alt="Jane D." class="review-photo">
+                    <strong>Jane D.</strong>
+                    <p>Amazing atmosphere! I found the perfect gifts for my family here.</p>
+                </div>
+                <div class="comment">
+                    <img src="https://i.pinimg.com/236x/3c/cc/fb/3cccfbff188ffe36dee52d24722b9858.jpg" alt="Michael S." class="review-photo">
+                    <strong>Michael S.</strong>
+                    <p>The food stalls were incredible. The mulled wine and cookies were my favorite!</p>
+                </div>
+                <div class="comment">
+                    <img src="https://i.pinimg.com/236x/e2/05/2d/e2052dcd0cc270b1919fd09e0b02a40e.jpg" alt="Emily R." class="review-photo">
+                    <strong>Emily R.</strong>
+                    <p>Beautiful decorations and such a warm, festive vibe. Can't wait for next year!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="stalls" class="section">
+            <h1>Market Stalls</h1>
+            <div class="stall-list">
+                <div class="stall">
+                    <img src="https://i.pinimg.com/736x/b3/87/55/b3875522d0aa4d8512e4e392a9cb1c9e.jpg" alt="Handmade Crafts">
+                    <h2>Handmade Crafts</h2>
+                    <p>Unique handcrafted items for your loved ones.</p>
+                </div>
+                <div class="stall">
+                    <img src="https://i.pinimg.com/736x/d3/ef/6b/d3ef6b204b5173dfdb7db63c0dbf3f57.jpg" alt="Festive Treats">
+                    <h2>Festive Treats</h2>
+                    <p>Delicious sweets and hot drinks to keep you warm.</p>
+                </div>
+                <div class="stall">
+                    <img src="https://i.pinimg.com/736x/45/20/d1/4520d10052680acb88377559b6ae67dd.jpg" alt="Seasonal Decorations">
+                    <h2>Seasonal Decorations</h2>
+                    <p>Beautiful ornaments to make your home sparkle.</p>
+                </div>
+                <div class="stall">
+            <img src="https://i.pinimg.com/736x/8a/1f/02/8a1f025b056e2e1d9e1616cd5151c9b7.jpg" alt="Vintage Antiques">
+            <h2>Vintage Antiques</h2>
+            <p>Explore timeless treasures and nostalgic items.</p>
+        </div>
+        <div class="stall">
+            <img src="https://i.pinimg.com/736x/f8/59/1d/f8591d44fd27b91c39becf13bcffd57d.jpg" alt="Handmade Jewelry">
+            <h2>Handmade Jewelry</h2>
+            <p>Exclusive, handcrafted jewelry pieces for a perfect gift.</p>
+        </div>
+        <div class="stall">
+            <img src="https://i.pinimg.com/236x/9d/01/d9/9d01d95c8b4434be5bdb50e4d140f3cc.jpg" alt="Cozy Knitwear">
+            <h2>Cozy Knitwear</h2>
+            <p>Snuggle up with warm, hand-knitted scarves and sweaters.</p>
+        </div>
+        <div class="stall">
+            <img src="https://i.pinimg.com/736x/b5/2d/d4/b52dd47ef296369654d849e61513c082.jpg" alt="Holiday Candles">
+            <h2>Holiday Candles</h2>
+            <p>Fragrant candles to bring festive warmth to your home.</p>
+        </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h1>Contact Us</h1>
+            <form action="#" class="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="contact-info">
+                <h2>Contact Details</h2>
+                <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                <p><strong>Email:</strong> contact@christmasmarket.com</p>
+                <p><strong>Address:</strong> 123 Holiday Lane, Winterville, USA</p>
+            </div>
+            
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Christmas Market. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
