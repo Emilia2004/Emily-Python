@@ -1,0 +1,40 @@
+{
+    "people": [
+      {
+        "name": "Ann",
+        "surname": "Brown",
+        "age": 56,
+        "sex": "Female",
+        "photo": "https://img.huffingtonpost.com/asset/5787b3d11a00001f006fa645.jpg"
+      },
+      {
+        "name": "John",
+        "surname": "Newman",
+        "age": 24,
+        "sex": "Male",
+        "photo": "https://happiful-magazine.ghost.io/content/images/2019/07/John-Newman-Press-Shot.jpg"
+      },
+      {
+        "name": "Arthur",
+        "surname": "Darbinyan",
+        "age": 34,
+        "sex": "Male",
+        "photo": "https://m.media-amazon.com/images/M/MV5BNmZlMGI1ZDctNzU3NC00OGM2LWFmNTYtMmM2MjAyODNjZmViXkEyXkFqcGc@._V1_.jpg"
+      },
+      {
+        "name": "Lilith",
+        "surname": "Hovhannisyan",
+        "age": 28,
+        "sex": "Female",
+        "photo": "https://armenpress.am/static/news/b/2020/04/1011288.jpg"
+      },
+      {
+        "name": "James",
+        "surname": "Bond",
+        "age": 30,
+        "sex": "Male",
+        "photo": "https://cdn.shopify.com/s/files/1/0194/1608/8640/files/James_Bond_007_OMEGA_1024x1024.jpg?v=1582754435"
+      }
+    ]
+  }
+  
